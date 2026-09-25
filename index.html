@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor de Monedas y Notitas</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- SECCIÓN 1: CONVERSOR DE MONEDA -->
+    <section class="card section-converter">
+      <h2><i class="fa-solid fa-coins"></i> Conversor de Monedas</h2>
+      
+      <div class="converter-grid">
+        <div class="input-group">
+          <label for="amount">Monto ($ Pesos):</label>
+          <input type="number" id="amount" placeholder="Ej: 20000" value="20000" oninput="convertCurrency()">
+        </div>
+
+        <div class="input-group">
+          <label for="exchange-rate">Cotización Dólar ($ / U$S):</label>
+          <input type="number" id="exchange-rate" value="1500" oninput="convertCurrency()">
+        </div>
+      </div>
+
+      <div class="result-box">
+        <span>Resultado Equivalente:</span>
+        <h3 id="converted-result">13.33 U$S</h3>
+      </div>
+    </section>
+
+
+    <!-- SECCIÓN 2: NOTITAS -->
+    <section class="card section-notes">
+      <h2><i class="fa-solid fa-note-sticky"></i> Notitas y Recordatorios</h2>
+      
+      <!-- Formulario para agregar nota -->
+      <div class="note-form">
+        <div class="input-group">
+          <label for="note-title">Título de la nota:</label>
+          <input type="text" id="note-title" placeholder="Ej: VACACIONES">
+        </div>
+
+        <div class="input-group">
+          <label for="note-amount">Monto en Pesos ($):</label>
+          <input type="number" id="note-amount" placeholder="Ej: 20000">
+        </div>
+
+        <div class="input-group">
+          <label for="note-style">Estilo de Notita:</label>
+          <select id="note-style">
+            <option value="blue">Azul Glacé (Vacaciones)</option>
+            <option value="pink">Rosa Pastel</option>
+            <option value="frame">Marco Dorado (Especial)</option>
+            <option value="sketch">Borde Garabato (Sketch)</option>
+          </select>
+        </div>
+
+        <button class="btn-add" onclick="createNote()">
+          <i class="fa-solid fa-plus"></i> AGREGAR NOTA
+        </button>
+      </div>
+
+      <!-- Contenedor de notitas agregadas -->
+      <div id="notes-container" class="notes-grid">
+        
+        <!-- Ejemplo inicial basado en la imagen -->
+        <div class="note-card note-blue">
+          <button class="btn-delete" onclick="this.parentElement.remove()"><i class="fa-solid fa-xmark"></i></button>
+          <h3 class="note-card-title">VACACIONES</h3>
+          <p class="note-card-ars">$20.000</p>
+          <p class="note-card-usd">13.33 U$S</p>
+        </div>
+
+        <div class="note-card note-frame">
+          <button class="btn-delete" onclick="this.parentElement.remove()"><i class="fa-solid fa-xmark"></i></button>
+          <h3 class="note-card-title">COMPRAR GALLETAS</h3>
+          <p class="note-card-ars">$1.500</p>
+          <p class="note-card-usd">1 U$S</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

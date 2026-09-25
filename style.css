@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #f5e6fa 0%, #e5d4f3 100%);
+  min-height: 100vh;
+  padding: 30px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  color: #333;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(184, 134, 212, 0.25);
+  border: 2px solid #e0c3fc;
+}
+
+h2 {
+  color: #6b21a8;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.4rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+}
+
+input, select {
+  padding: 12px 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #9333ea;
+}
+
+/* Sección Conversor */
+.converter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.result-box {
+  background: #f3e8ff;
+  border: 2px dashed #a855f7;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.result-box span {
+  font-size: 0.85rem;
+  color: #6b21a8;
+}
+
+.result-box h3 {
+  font-size: 1.8rem;
+  color: #7e22ce;
+  margin-top: 5px;
+}
+
+/* Sección Formulario Notitas */
+.note-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  background: #faf5ff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.btn-add {
+  grid-column: 1 / -1;
+  background: #9333ea;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background: #7e22ce;
+}
+
+/* Grilla de Notitas */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  min-height: 150px;
+}
+
+/* Estilos individuales de Notitas (Basados en la imagen) */
+.note-card {
+  position: relative;
+  min-height: 160px;
+  padding: 20px 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  word-break: break-word;
+  transition: transform 0.2s;
+}
+
+.note-card:hover {
+  transform: translateY(-4px);
+}
+
+.btn-delete {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  color: white;
+  border: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.note-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.note-card-ars {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.note-card-usd {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* Estilo 1: Azul Glacé (Vacaciones) */
+.note-blue {
+  background: linear-gradient(180deg, #0072ff 0%, #00c6ff 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+}
+
+/* Estilo 2: Rosa Pastel */
+.note-pink {
+  background: #ffb6c1;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 182, 193, 0.4);
+}
+
+/* Estilo 3: Marco Dorado */
+.note-frame {
+  background: #ffffff;
+  color: #333;
+  border: 10px solid #d4af37;
+  outline: 2px solid #996515;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Estilo 4: Sketch / Bordes ondeados */
+.note-sketch {
+  background: #ffffff;
+  color: #333;
+  border: 3px dashed #333;
+  border-radius: 4px;
+}
